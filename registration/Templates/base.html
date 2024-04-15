@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        {% block title %}
-        Default Title
-        {% endblock %}
     </title>
+
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -16,14 +15,17 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="">School Management System</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Courses</a></li>
-      <li><a href="#">Register</a></li>
-      <li><a href="#">Login</a></li>
+    <ul class="nav navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="{%  url 'Home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{%  url 'Courses' %}">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="{%  url 'Register' %}">Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="{%  url 'Login' %}">Login</a></li>
+
     </ul>
   </div>
 </nav>
+
+
 
 <header>
     {% block header %}
@@ -41,9 +43,20 @@
     {% endblock %}
 </footer>
 
+#project config folder is where the project settings are undertaken(has same name as prj)
+#urls patterns for the project are defined in urls.py
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>
+
+
+
+
+
+
+
