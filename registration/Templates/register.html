@@ -1,19 +1,55 @@
 {% extends 'base.html' %}
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 
 {% block content %}
+    <style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 
 <div class="container-fluid row gap-0">
-    <div class="col bg-danger">
-    <img src="ed tab.webp" width="700px" height="300px">
+    <div class="col bg-light">
+        <table style="width:100%">
+  <tr>
+    <th>First Name</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Delete</th>
+
+  </tr>
+            {% for Student in data %}
+  <tr>
+    <td>{{ Student.first_name  }}</td>
+
+
+    <td>{{ Student.email }}</td>
+
+      <td>
+          <a href="/editstudent/{{ Student.id }}" type="button" class="btn-outline-success">Edit</a>
+      </td>
+
+
+      <td>
+          <a href="/deletestudent/{{ Student.id }}" type="button" class="btn-outline-success">Delete</a>
+      </td>
+  </tr>
+            {% endfor %}
+</table>
+
     </div>
     <div class="col bg-info ">
         <h3>Register Below:</h3>
         <form method="POST" action="/addstudent">
              {% csrf_token %}
   <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" placeholder="enter your first name"><br>
+  <input type="text" id="fname" name="fname" id="name" placeholder="enter your first name"><br>
   <label for="mail">Email;</label><br>
-  <input type="text@gmail.com" id="mail" name="Email" placeholder="enter your email"><br><br>
+  <input type="text@gmail.com" id="mail" name="Email" id="email" placeholder="enter your email"><br><br>
   <button type="Register" class="btn btn-primary">Register</button>
         </form>
   <a href="url">Forgot Password?</a>
@@ -22,4 +58,9 @@
     </div>
 </div>
 {% endblock %}
+
+
+
+
+
 
